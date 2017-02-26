@@ -180,7 +180,7 @@ func Healthcheck(w http.ResponseWriter, req *http.Request) {
 }
 
 func main() {
-	collector = appdash.NewRemoteCollector("localhost:7701")
+	collector = appdash.NewRemoteCollector("appdash:7701")
 	collector = appdash.NewChunkedCollector(collector)
 	tracer := appdashtracer.NewTracer(collector)
 	opentracing.InitGlobalTracer(tracer)
